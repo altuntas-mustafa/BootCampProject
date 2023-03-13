@@ -1,0 +1,21 @@
+.card-container {
+    border: 0.1vw black solid;
+    width: 90vw;
+    text-align: center;
+    margin-bottom: 1vh;
+    font-size: 5vw;
+}
+
+@media only screen and (min-width: 768px) {
+    .card-container {
+        width: 95vw;
+        flex-direction: row;
+        font-size: 1.2vw;
+    }
+    .button-developer {
+        font-size: 1vw;
+        width: 5vw;
+        height: 2vw;
+        text-align: center;
+    }
+  }

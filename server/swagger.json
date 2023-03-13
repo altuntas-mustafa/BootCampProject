@@ -1,0 +1,109 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "saltBootcamp server",
+    "description": "React - Salt Instructors & Developers",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3001",
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/bootcamps": {
+      "get": {
+          "tags": [
+            "Bootcamps"
+          ],
+          "summary": "Get all bootcamps",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+    },
+    "/instructors": {
+      "get": {
+          "tags": [
+            "Instructors"
+          ],
+          "summary": "Get all instructors",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+    },
+    "/developers": {
+      "get": {
+          "tags": [
+            "Developers"
+          ],
+          "summary": "Get all developers",
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          }
+        },
+        "post": {
+          "summary": "Add new developer",
+          "tags": [
+            "Developers"
+          ],
+          "parameters": [
+            {
+              "name": "developer",
+              "in": "body",
+              "description": "developer with new values of properties",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {"type":"string"},
+                  "bootcampId": {"type":"string"}
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {"description": "Bad Request"}
+          }
+        }
+    },
+    "/developers/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of developer that we want to find",
+          "type": "string"
+        }
+      ],
+      "delete": {
+        "summary": "Delete developer with given ID",
+        "tags": [
+          "Developers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Developer with the provided Id not found"
+          }
+        }
+      }
+    }
+  }
+}

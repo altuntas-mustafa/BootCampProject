@@ -1,0 +1,26 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: auto;
+    font-size: 2vw;
+}
+.button-developer {
+    font-size: 3vw;
+    width: 12vw;
+    height: 6vw;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .cardContainer {
+        flex-direction: row;
+        font-size: 1vw;
+    }
+    .button-developer {
+        font-size: 1vw;
+        width: 5vw;
+        height: 2vw;
+        text-align: center;
+    }
+  }
